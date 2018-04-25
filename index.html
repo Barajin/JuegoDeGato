@@ -5,18 +5,32 @@
 
 </head>
 <link rel="stylesheet" type="text/css" href="css/estilos.css">
+<script src="js/dragDrop.js"></script>
 <body>
-	<section id="puntuaciones1"><p>Jugador 1 puntuación</p></section><br> 
-	<p>Jugador 2 puntuación</p></section>
-  <button id="b11" class="buttons" name="b1" onclick="actions(this)"></button>
-  <button id="b12" class="buttons" name="b2" onclick="actions(this)"></button>
-  <button id="b13" class="buttons" name="b3" onclick="actions(this)"></button>
-  <button id="b21" class="buttons" name="b4" onclick="actions(this)"></button>
-  <button id="b22" class="buttons" name="b5" onclick="actions(this)"></button>
-  <button id="b23" class="buttons" name="b6" onclick="actions(this)"></button>
-  <button id="b31" class="buttons" name="b7" onclick="actions(this)"></button>
-  <button id="b32" class="buttons" name="b8" onclick="actions(this)"></button>
-  <button id="b33" class="buttons" name="b9" onclick="actions(this)"></button>
+  <header> Juego de Gato</header>
+<div id="contenedorCirculo">
+    <img id="circulo"  src="img/circulo.png" alt="" draggable="true">
+</div>
+<div id="contenedorEquis">
+  <img src="img/equis.png" alt="" draggable="true" ondragstart="drag(event)">
+</div>
+  <table>
+    <tr>
+      <td id="A1" ondrop="drop(event)" ondragover="allowDrop(event)"><div></div></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 
 </body>
 </html>
