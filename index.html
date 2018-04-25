@@ -9,26 +9,35 @@
 <body>
   <header> Juego de Gato</header>
 <div id="contenedorCirculo">
-    <img id="circulo"  src="img/circulo.png" alt="" draggable="true">
+    <img id="circulo"  src="img/circulo.png" dragable="true" ondragstart="drag(event)">
+    <img id="circulo"  src="img/circulo.png" dragable="true" ondragstart="drag(event)">
+    <img id="circulo"  src="img/circulo.png" dragable="true" ondragstart="drag(event)">
+    <img id="circulo"  src="img/circulo.png" dragable="true" ondragstart="drag(event)">
+    <img id="circulo"  src="img/circulo.png" dragable="true" ondragstart="drag(event)">
 </div>
 <div id="contenedorEquis">
-  <img src="img/equis.png" alt="" draggable="true" ondragstart="drag(event)">
+  <img id="equis" src="img/equis.png"  draggable="true" ondragstart="drag(event)">
+  <img id="equis" src="img/equis.png"  draggable="true" ondragstart="drag(event)">
+  <img id="equis" src="img/equis.png"  draggable="true" ondragstart="drag(event)">
+  <img id="equis" src="img/equis.png"  draggable="true" ondragstart="drag(event)">
+  <img id="equis" src="img/equis.png"  draggable="true" ondragstart="drag(event)">
+
 </div>
   <table>
     <tr>
-      <td id="A1" ondrop="drop(event)" ondragover="allowDrop(event)"><div></div></td>
-      <td></td>
-      <td></td>
+      <td id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+      <td id="9" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
     </tr>
   </table>
 

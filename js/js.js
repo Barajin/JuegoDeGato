@@ -1,60 +1,55 @@
-var con=1;
-var b1="b1",b2="b2",b3="b3",b4="b4",b5="b5",b6="b6",b7="b7",b8="b8",b9="b9";
-function actions(boton){
- if(boton.className=="buttons"){
-//  alert(boton.name);
-  boton.className="clicked";
-  var text;
-  if(con%2==0){
-   text="X";
-  }else{
-   text="O";
-  }
-  boton.value=text;
-//  alert(boton.value);
-  boton.appendChild(document.createTextNode(text));
-  con++;
-  asignation(text,boton);
- }else{
-//  alert("Yei!!!");
-//  alert(boton.value);
- }
-}
-function asignation(text,boton){
- if(b1==boton.name){
-  b1=text;
- }
- else if(b2==boton.name){
-  b2=text;
- }
- else if(b3==boton.name){
-  b3=text;
- }
- else if(b4==boton.name){
-  b4=text;
- }
- else if(b5==boton.name){
-  b5=text;
- }
- else if(b6==boton.name){
-  b6=text;
- }
- else if(b7==boton.name){
-  b7=text;
- }
- else if(b8==boton.name){
-  b8=text;
- }
- else if(b9==boton.name){
-  b9=text;
- }
- validation(text);
-}
-function validation(text){
- if((b1==b2 && b2==b3)||(b1==b5 && b5==b9)||(b3==b5 && b5==b7)||(b4==b5 && b5==b6)||(b7==b8 && b8==b9)||(b1==b4 && b4==b7)||(b2==b5 && b5==b8)||(b3==b6 && b6==b9)){
-  var con=confirm(text+" has won!!!\nDo you wanna play again?");
-  if(con==true){
-   window.location.reload();
-  }
- }
-}
+    var turno = "X";  
+    var turno2= "O";
+    var opciones = new Array(9);
+    function marcar(id){    
+      
+
+      bandera++;
+      jugadorX();
+      jugadorO();
+    } 
+ 
+    function jugadorX(){
+        //para el jugador X
+        if(opciones[1]==1 && opciones[2]==1 && opciones[3]==1){//primer linea horizontal
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[4]==1 && opciones[5]==1 && opciones[6]==1){//segunda linea horizontal
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[7]==1 && opciones[8]==1 && opciones[9]==1){//tercera linea horizontal
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[1]==1 && opciones[5]==1 &&opciones[9]==1){//primera linea diagonal
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[3]==1 && opciones[5]==1 &&opciones[7]==1){//segunda linea diagonal
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[1]==1 && opciones[4]==1 &&opciones[7]==1){//primer linea vertical izquierda
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[2]==1 && opciones[5]==1 &&opciones[8]==1){//linea de enmedio vertical
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }else if(opciones[3]==1 && opciones[6]==1 &&opciones[9]==1){//tercer linea vertical derecha
+          alert("Felicidades Jugador " +turno+ " Ganaste");
+        }
+                }
+                // para el jugador 2
+               function jugadorO(){
+        if(opciones[1]==0 && opciones[2]==0 && opciones[3]==0){//primer linea horizontal
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[4]==0 && opciones[5]==0 && opciones[6]==0){//segunda linea horizontal
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[7]==0 && opciones[8]==0 && opciones[9]==0){//tercera linea horizontal
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[1]==0 && opciones[5]==0 &&opciones[9]==0){//primera linea diagonal
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[3]==0 && opciones[5]==0 &&opciones[7]==0){//segunda linea diagonal
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[1]==0 && opciones[4]==0 &&opciones[7]==0){//primer linea vertical izquierda
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[2]==0 && opciones[5]==0 &&opciones[8]==0){//linea de enmedio vertical
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }else if(opciones[3]==0 && opciones[6]==0 &&opciones[9]==0){//tercer linea vertical derecha
+          alert("Felicidades Jugador " +turno2+ " Ganaste");
+        }
+               }
+                // funcion para reiniciar el juego
+               function reiniciar(){
+                location.reload();
+               }

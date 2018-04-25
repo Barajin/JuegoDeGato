@@ -7,7 +7,13 @@ table{
 }
 table tr td{
 	border: solid black 1px;
-	padding: 50px;
+	padding: 70px;
+
+}
+table tr td img{
+	width: 40px;
+	height: 40px;
+	margin:auto;
 
 }
 body #contenedorCirculo img{
