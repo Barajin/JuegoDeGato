@@ -5,7 +5,7 @@
     function asignarjugador(fotoid){
       var tipojugador;
       if(fotoid==="equis"){
-        vartipojugador=0;
+        vartipojugador=1;
         jugadorX();
       }else if(fotoid==="circulo")
       vartipojugador=0;
@@ -21,62 +21,86 @@
 			ev.target.appendChild(document.getElementById(data))
 			var elemento=ev.target.id;	
 			console.log(elemento);
-      var fotoid=asignarjugador();
-      console.log(fotoid);
+      //var fotoid=asignarjugador(elemento);
+      //console.log(fotoid);
       if(fotoid=="equis"){
-        tablero[elemento]=0;
+        tablero[elemento]="equis";
       }else if(fotoid=="circulo")
-      tablero[elemento]=1;
-     
-				
+      tablero[elemento]="circulo";
+      console.log(tablero[0]);
+      jugadorX();
+      jugadorO()
+      
 		}
 		function allowDrop(ev){
 			ev.preventDefault();
 		}
 		function drag(ev){
 			ev.dataTransfer.setData("text",ev.target.id);
-      var fotoid=ev.target.id; 
+      fotoid=ev.target.id; 
       asignarjugador(fotoid);
       console.log(fotoid); 
-		}
-
+    }
+    /*
+function jx(){
+  var contador_x=0;
+  var contador_o=0;
+  for(var i=0;i<tablero.length;i++){
+      if(tablero[i]==0){
+          contador_x++;
+          contador_o=0;
+          if(contador_x===3){
+            alert("Felicidades Jugador X Ganaste");
+          }
+      }else if(tablero[i]==1){
+        if(tablero[i]==1){
+          contador_o++;
+          contador_x=0;
+          if(contador_x===3){
+            alert("Felicidades Jugador X Ganaste");
+          }
+      }
+  }
+}
+}*/
 function jugadorX(){
         //para el jugador X
-        if(tablero[1]==1 && tablero[2]==1 && tablero[3]==1){//primer linea horizontal
+        if(tablero[0]=="equis" && tablero[1]=="equis" && tablero[2]=="equis"){//primer linea horizontal
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[4]==1 && tablero[5]==1 && tablero[6]==1){//segunda linea horizontal
+          console.log("prueba");  
+        }else if(tablero[3]=="equis" && tablero[4]=="equis" && tablero[5]=="equis"){//segunda linea horizontal
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[7]==1 && tablero[8]==1 && tablero[9]==1){//tercera linea horizontal
+        }else if(tablero[6]=="equis" && tablero[7]=="equis" && tablero[8]=="equis"){//tercera linea horizontal
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[1]==1 && tablero[5]==1 &&tablero[9]==1){//primera linea diagonal
+        }else if(tablero[1-1]=="equis" && tablero[5-1]=="equis" &&tablero[9-1]=="equis"){//primera linea diagonal
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[3]==1 && tablero[5]==1 &&tablero[7]==1){//segunda linea diagonal
+        }else if(tablero[3-1]=="equis" && tablero[5-1]=="equis" &&tablero[7-1]=="equis"){//segunda linea diagonal
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[1]==1 && tablero[4]==1 &&tablero[7]==1){//primer linea vertical izquierda
+        }else if(tablero[1-1]=="equis" && tablero[4-1]=="equis" &&tablero[7-1]=="equis"){//primer linea vertical izquierda
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[2]==1 && tablero[5]==1 &&tablero[8]==1){//linea de enmedio vertical
+        }else if(tablero[2-1]=="equis" && tablero[5-1]=="equis" &&tablero[8-1]=="equis"){//linea de enmedio vertical
           alert("Felicidades Jugador X Ganaste");
-        }else if(tablero[3]==1 && tablero[6]==1 &&tablero[9]==1){//tercer linea vertical derecha
+        }else if(tablero[3-1]=="equis" && tablero[6-1]=="equis" &&tablero[9-1]=="equis"){//tercer linea vertical derecha
           alert("Felicidades Jugador X Ganaste");
         }
                 }
                 // para el jugador 2
                function jugadorO(){
-        if(tablero[1]==0 && tablero[2]==0 && tablero[3]==0){//primer linea horizontal
+        if(tablero[0]=="circulo" && tablero[1]=="circulo" && tablero[2]=="circulo"){//primer linea horizontal
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[4]==0 && tablero[5]==0 && tablero[6]==0){//segunda linea horizontal
+        }else if(tablero[3]=="circulo" && tablero[4]=="circulo" && tablero[5]=="circulo"){//segunda linea horizontal
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[7]==0 && tablero[8]==0 && tablero[9]==0){//tercera linea horizontal
+        }else if(tablero[6]=="circulo" && tablero[7]=="circulo"&& tablero[8]=="circulo"){//tercera linea horizontal
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[1]==0 && tablero[5]==0 &&tablero[9]==0){//primera linea diagonal
+        }else if(tablero[0]=="circulo" && tablero[4]=="circulo" &&tablero[8]=="circulo"){//primera linea diagonal
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[3]==0 && tablero[5]==0 &&tablero[7]==0){//segunda linea diagonal
+        }else if(tablero[3]=="circulo" && tablero[5]=="circulo" &&tablero[6]=="circulo"){//segunda linea diagonal
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[1]==0 && tablero[4]==0 &&tablero[7]==0){//primer linea vertical izquierda
+        }else if(tablero[0]=="circulo" && tablero[3]=="circulo" &&tablero[6]=="circulo"){//primer linea vertical izquierda
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[2]==0 && tablero[5]==0 &&tablero[8]==0){//linea de enmedio vertical
+        }else if(tablero[1]=="circulo" && tablero[4]=="circulo" &&tablero[7]=="circulo"){//linea de enmedio vertical
           alert("Felicidades JugadorO Ganaste");
-        }else if(tablero[3]==0 && tablero[6]==0 &&tablero[9]==0){//tercer linea vertical derecha
+        }else if(tablero[2]=="circulo" && tablero[5 ]=="circulo" &&tablero[8]=="circulo"){//tercer linea vertical derecha
           alert("Felicidades JugadorO Ganaste");
         }
-               }
+    }

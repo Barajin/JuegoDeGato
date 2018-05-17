@@ -28,9 +28,9 @@
         }else if(opciones[3]==1 && opciones[6]==1 &&opciones[9]==1){//tercer linea vertical derecha
           alert("Felicidades Jugador " +turno+ " Ganaste");
         }
-                }
+    }
                 // para el jugador 2
-               function jugadorO(){
+    function jugadorO(){
         if(opciones[1]==0 && opciones[2]==0 && opciones[3]==0){//primer linea horizontal
           alert("Felicidades Jugador " +turno2+ " Ganaste");
         }else if(opciones[4]==0 && opciones[5]==0 && opciones[6]==0){//segunda linea horizontal
@@ -48,8 +48,8 @@
         }else if(opciones[3]==0 && opciones[6]==0 &&opciones[9]==0){//tercer linea vertical derecha
           alert("Felicidades Jugador " +turno2+ " Ganaste");
         }
-               }
+    }
                 // funcion para reiniciar el juego
-               function reiniciar(){
-                location.reload();
-               }
+     function reiniciar(){
+        location.reload();
+      }
