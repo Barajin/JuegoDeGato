@@ -2,6 +2,9 @@
     var fotoid;
 
 
+
+
+
     function asignarjugador(fotoid){
       var tipojugador;
       if(fotoid==="equis"){
@@ -16,20 +19,19 @@
 
 	function drop(ev){
 
+
 			ev.preventDefault();
 			var data=ev.dataTransfer.getData("text");
 			ev.target.appendChild(document.getElementById(data))
 			var elemento=ev.target.id;	
 			console.log(elemento);
-      //var fotoid=asignarjugador(elemento);
-      //console.log(fotoid);
       if(fotoid=="equis"){
         tablero[elemento]="equis";
       }else if(fotoid=="circulo")
       tablero[elemento]="circulo";
       console.log(tablero[0]);
       jugadorX();
-      jugadorO()
+      jugadorO();
       
 		}
 		function allowDrop(ev){
@@ -41,28 +43,7 @@
       asignarjugador(fotoid);
       console.log(fotoid); 
     }
-    /*
-function jx(){
-  var contador_x=0;
-  var contador_o=0;
-  for(var i=0;i<tablero.length;i++){
-      if(tablero[i]==0){
-          contador_x++;
-          contador_o=0;
-          if(contador_x===3){
-            alert("Felicidades Jugador X Ganaste");
-          }
-      }else if(tablero[i]==1){
-        if(tablero[i]==1){
-          contador_o++;
-          contador_x=0;
-          if(contador_x===3){
-            alert("Felicidades Jugador X Ganaste");
-          }
-      }
-  }
-}
-}*/
+   
 function jugadorX(){
         //para el jugador X
         if(tablero[0]=="equis" && tablero[1]=="equis" && tablero[2]=="equis"){//primer linea horizontal
